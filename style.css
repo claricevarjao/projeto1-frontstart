@@ -64,18 +64,18 @@ header{
   align-items: center;
 }
 
-.container img{
+header .container img{
   display: none;
 }
 
-.container{
+header .container{
   width: 50%;
   height: fit-content;
   padding: 0 100px;
 }
 
 
-.container button{
+header .container button{
   margin-top: 40px;
 }
 
@@ -88,6 +88,8 @@ nav{
   padding: 0 100px;
   position: sticky;
   top: 0;
+
+  z-index:99;
 }
 
 nav img{
@@ -111,7 +113,7 @@ nav ul a svg{
 }
 
 .about-me{
-  display:flex;
+  display: flex;
   padding: 100px;
 }
 
@@ -129,21 +131,22 @@ nav ul a svg{
 .about-me .img-container img{
   width: 70%;
   height: 100%;
+  object-fit: cover;
 }
 
-.about-me .img-container .line{
-  width: calc(70% + 50px);
-  height: calc(100% + 50px);
-  border: 1px solid var(--purple);
+.about-me .img-container .line {
+    width: calc(70% + 50px);
+    height: calc(100% + 50px);
+    border: 1px solid var(--purple);
 
-  position: absolute;
-  top: -25px;
-  left: calc(50% - 70%/2 - 25px);
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 70%/2 - 25px);
 }
 
-.about-me .img-container .line.green{
-  transform: rotate(-3.3deg);
-  color: var(--green);
+.about-me .img-container .line.green {
+    transform: rotate(-3.3deg);
+    color: var(--green);
 }
 
 /* RESPONSIVIDADE */
@@ -161,6 +164,23 @@ nav ul a svg{
   nav ul a{
     font-size: 18px;
   }
+
+  .about-me {
+    flex-direction: column;
+}
+
+.about-me .container, .about-me .img-container {
+    width: 100%;
+}
+
+.about-me .container {
+    padding-right: 0;
+}
+
+.about-me .img-container {
+    margin: 70px 0;
+}
+
 }
 
 /* tablet */
@@ -188,7 +208,6 @@ nav ul a svg{
 /* celular */
 @media(max-width: 480px){
   header .container{
-
     padding: 0 40px;
   }
 
@@ -203,10 +222,14 @@ nav ul a svg{
   nav ul a{
    font-size: 12px; 
   }
+
   nav ul a svg{
     display:block;
     margin: 0 auto 10px;;
   }
  
+  .about-me{
+    padding: 40px;
+  }
 
 }
